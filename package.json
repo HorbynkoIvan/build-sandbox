@@ -4,6 +4,7 @@
   "description": "Sandbox to play with React build tools",
   "main": "index.js",
   "scripts": {
+    "start": "webpack",
     "babel": "babel --presets es2015 src/index.js -o build/main.bundle.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -25,6 +26,7 @@
     "@babel/plugin-transform-template-literals": "^7.10.4",
     "@babel/preset-env": "^7.10.4",
     "@babel/preset-react": "^7.10.4",
+    "file-loader": "^6.0.0",
     "webpack": "^4.43.0",
     "webpack-cli": "^3.3.12"
   },
