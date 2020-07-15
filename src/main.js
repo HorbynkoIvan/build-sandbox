@@ -1,14 +1,6 @@
-class App {
-    constructor() {
-        this.run = (name="World")=>{
-            console.log(`Hello ${name}`)
-        }
-    }
-    /*run() {
-        const name = "World"
-        console.log(`Hello ${name}`)
-    }*/
-}
+import React from 'react';
+import ReactDOM from 'react-dom';
 
-const app = new App()
-app.run()
+const App = () => <h1>Hello World!</h1>;
+
+ReactDOM.render(<App/>, document.getElementById('root'));

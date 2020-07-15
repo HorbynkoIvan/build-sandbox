@@ -12,7 +12,8 @@
   "browserslist": [
     "last 2 chrome versions",
     "last 2 firefox versions",
-    "last 2 ios versions"
+    "last 2 ios versions",
+    "last 1 edge versions"
   ],
   "devDependencies": {
     "@babel/cli": "^7.10.4",
@@ -22,6 +23,12 @@
     "@babel/plugin-transform-block-scoping": "^7.10.4",
     "@babel/plugin-transform-classes": "^7.10.4",
     "@babel/plugin-transform-template-literals": "^7.10.4",
-    "@babel/preset-env": "^7.10.4"
+    "@babel/preset-env": "^7.10.4",
+    "@babel/preset-react": "^7.10.4"
+  },
+  "dependencies": {
+    "core-js": "^3.6.5",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   }
 }
