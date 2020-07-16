@@ -7,9 +7,10 @@ module.exports = {
             {
                 test: /\.js$/,
                 exclude: /node_modules/,
-                use: [{
+                loader: "babel-loader"
+                /*use: [{
                     loader: "babel-loader",
-                }]
+                }]*/
             },
             //Loading images
             {
@@ -33,12 +34,24 @@ module.exports = {
                     }
                 }]
             },
+            //Loading css
             {
-                test: /\.css$/,
-                use: [
+                test: /\.(css)$/,
+                use: ["style-loader", "css-loader"]
+                /*use: [
                     {loader: "style-loader"},
                     {loader: "css-loader"}
-                ]
+                ]*/
+            },
+            //Loading sass/scss
+            {
+                test: /\.(s[ca]ss)$/,
+                use: ["style-loader", "css-loader", "sass-loader"]
+                /*use: [
+                    {loader: "style-loader"},
+                    {loader: "css-loader"},
+                    {loader: "sass-loader"}
+                ]*/
             }
         ]
     }
