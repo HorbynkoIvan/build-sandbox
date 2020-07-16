@@ -1,13 +1,10 @@
-import Log from "./log";
-import Calc from "./calc";
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-import imgSrc from "./webpack.png"
+import './main.css'
 
-const log = new Log();
-const calc = new Calc();
+const App = ()=>{
+    return <h1>Hello</h1>
+}
 
-log.log(calc.add(1,2,3))
-
-const el = document.createElement('img');
-el.src = imgSrc;
-document.body.appendChild(el)
+ReactDOM.render(<App/>, document.getElementById('root'));
