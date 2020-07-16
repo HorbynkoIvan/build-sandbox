@@ -1,6 +1,10 @@
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
+
 module.exports = {
     mode: "development",
 
+    //loaders
     module: {
         rules: [
             //Loading js
@@ -37,7 +41,7 @@ module.exports = {
             //Loading css
             {
                 test: /\.(css)$/,
-                use: ["style-loader", "css-loader"]
+                use: [MiniCssExtractPlugin.loader, "css-loader"]
                 /*use: [
                     {loader: "style-loader"},
                     {loader: "css-loader"}
@@ -46,7 +50,7 @@ module.exports = {
             //Loading sass/scss
             {
                 test: /\.(s[ca]ss)$/,
-                use: ["style-loader", "css-loader", "sass-loader"]
+                use: [MiniCssExtractPlugin.loader, "css-loader", "sass-loader"]
                 /*use: [
                     {loader: "style-loader"},
                     {loader: "css-loader"},
@@ -54,5 +58,16 @@ module.exports = {
                 ]*/
             }
         ]
-    }
+    },
+
+    //plugins
+    plugins: [
+        new HtmlWebpackPlugin({template: "public/index.html"}),
+        new MiniCssExtractPlugin({
+            // Options similar to the same options in webpackOptions.output
+            // both options are optional
+            filename: '[name]-[hash:8].css',
+            chunkFilename: '[id].css',
+        }),
+    ]
 }
